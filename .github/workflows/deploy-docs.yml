@@ -3,7 +3,7 @@ name: Deploy Storybook
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-and-deploy:
@@ -19,7 +19,7 @@ jobs:
           node-version: 16
 
       - name: Install dependencies 
-        run: npm ci # Comando para instalar as dependencias de produção do projeto em ambientes não interativos (não é possível dar nenhuma entrada no terminal).
+        run: npm ci --force # Comando para instalar as dependencias de produção do projeto em ambientes não interativos (não é possível dar nenhuma entrada no terminal).
                     # Nada mais é que o npm install para instalar as dependencias, porém ele é para para ambientes não interativos
                     # O comando instala somente as dependencias de produção do projeto e não mexe no arquivo package-lock.json
 
