@@ -14,5 +14,14 @@ module.exports = {
   },
   "features": {
     "storyStoreV7": true
+  },
+  // ESSA CONFIGURAÇÃO É FEITA PARA O CASO DO REPOSITÓRIO ESTAR DENTRO DE UMA ORGANIZAÇÃO NO GITHUB
+  // ASSIM O STORYBOOK NÃO SE PERCE NO CAMINHO DO REPOSITÓRIO
+  viteFinal: (config, { configType }) => {
+    if (configType === 'PRODUCTION') {
+      config.base = '/ignite-lab-desing-system/';
+    }
+
+    return config;
   }
 }
